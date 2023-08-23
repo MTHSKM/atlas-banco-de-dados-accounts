@@ -1,0 +1,3 @@
+docker run --name postgres -e POSTGRES_PASSWORD=ignite -p 5432:5432 -d postgres
+
+npm run typeorm migration:run -- --dataSource=./src/shared/infra/typeorm/index.ts
