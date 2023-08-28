@@ -6,7 +6,7 @@ const dataSource = new DataSource({
     host: "localhost",
     port: 5432,
     username: "postgres",
-    password: "ignite",
+    password: "postgres",
     database: "postgres",
     migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
     entities: ["./src/modules/**/infra/typeorm/entities/*.ts"]

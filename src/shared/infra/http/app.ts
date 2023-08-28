@@ -1,4 +1,3 @@
-
 import express, { NextFunction, Request, Response } from 'express'
 import "reflect-metadata"
 import { router } from './routes'

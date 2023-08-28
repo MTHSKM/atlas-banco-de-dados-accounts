@@ -1,9 +1,9 @@
-import { IUsersTokensRepository } from "@modules/accounts/repositories/IUsersTokensRepository";
-import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
+import { IUsersTokensRepository } from "../../repositories/IUsersTokensRepository";
+import { IDateProvider } from "../../../../shared/container/providers/DateProvider/IDateProvider";
 import { inject, injectable } from "tsyringe";
 import { sign, verify } from "jsonwebtoken"
-import auth from "@config/auth";
-import { AppError } from "@shared/errors/AppError";
+import auth from "../../../../config/auth";
+import { AppError } from "../../../../shared/errors/AppError";
 
 
 

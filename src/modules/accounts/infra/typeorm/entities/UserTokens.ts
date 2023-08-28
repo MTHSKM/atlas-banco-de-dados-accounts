@@ -1,6 +1,7 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm"
-import { User } from "./User"
-import { v4 as uuidV4 } from "uuid"
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
+import { User } from "./User";
+import { v4 as uuidv4 } from "uuid";
+
 
 @Entity("users_tokens")
 class UserTokens {
@@ -8,28 +9,26 @@ class UserTokens {
     id: string;
 
     @Column()
-    name: string;
+    refresh_token: string;
 
     @Column()
-    email: string;
+    user_id: string;
+
+    @ManyToOne(() =>  User)
+    @JoinColumn({ name: "user_id" })
+    user:User;
 
     @Column()
-    password: string;
-
-    @Column()
-    isAdmin: boolean;
-    
-    @Column()
-    avatar: string;
+    expires_date: Date;
 
     @CreateDateColumn()
     created_at: Date;
 
-    constructor() {
-        if (!this.id){
-            this.id = uuidV4()
+    constructor(){
+        if(!this.id){
+            this.id = uuidv4()
         }
     }
 }
 
-export { User, UserTokens };
+export { UserTokens }
